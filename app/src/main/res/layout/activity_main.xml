@@ -29,10 +29,10 @@
         android:layout_height="450dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="40dp"
         app:cardBackgroundColor="#567566"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,10 +47,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="90dp"
             android:layout_marginTop="10dp"
             android:text="Select Your City"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -85,46 +85,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="80dp"
+            android:text="Petaluma,CA"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:background="@android:color/transparent"
-            android:textSize="28sp"
-            android:text="City 1" />
+            android:textSize="17sp"
+             />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="220dp"
-            android:text="City 2"
+            android:layout_marginTop="215dp"
+            android:text="Laguna Hills, CA"
             android:textColor="@android:color/black"
             android:background="@android:color/transparent"
-            android:textSize="28sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="219dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="340dp"
             android:background="@android:color/transparent"
-            android:text="City 3"
+            android:text="West Bloomfield Township, MI "
+            android:textAlignment="textStart"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="start" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lot Name 1"
+            android:text="Pronzini Christmas Trees"
             android:layout_marginLeft="170dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="120dp"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
         <TextView
@@ -132,10 +135,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="170dp"
-            android:layout_marginTop="260dp"
-            android:text="Lot Name 2"
+            android:layout_marginTop="255dp"
+            android:text="Pumpkin City Christmas Trees"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
         <TextView
@@ -143,10 +146,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="170dp"
-            android:layout_marginTop="390dp"
-            android:text="Lot Name 3"
+            android:layout_marginTop="400dp"
+            android:text="English Gardens"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
