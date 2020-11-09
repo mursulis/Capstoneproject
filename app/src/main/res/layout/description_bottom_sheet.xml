@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/LargeTreeImage"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:paddingTop="4dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/silver_tip" />
+
+    <TextView
+        android:id="@+id/TreeDesc"
+        android:layout_width="match_parent"
+        android:layout_height="308dp"
+        android:padding="15dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus arcu ex, iaculis vitae nisi eget, semper ullamcorper metus. Vestibulum nec lorem malesuada, pretium turpis quis, fringilla lacus. Nulla eget elementum neque. Nulla vitae odio eget lectus sodales mattis sed et magna. Etiam dictum tempor metus, ac accumsan erat porttitor id. "
+        android:textSize="17dp" />
+
+
+</LinearLayout>
