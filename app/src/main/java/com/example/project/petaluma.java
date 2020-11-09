@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.maps.MapView;
+
 import java.util.ArrayList;
 
 public class petaluma extends AppCompatActivity {
@@ -49,5 +51,7 @@ public class petaluma extends AppCompatActivity {
         startActivity(i);
 
     }
+
+
 
 }
