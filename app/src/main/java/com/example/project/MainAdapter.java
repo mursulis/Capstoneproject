@@ -18,18 +18,19 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
 
     ArrayList<MainModel> mainModels;
     Context context;
+    private OnTreeListener mOntreeListener;
 
-    public MainAdapter(Context context, ArrayList<MainModel> mainModels){
+    public MainAdapter(Context context, ArrayList<MainModel> mainModels, OnTreeListener onTreeListener){
         this.context = context;
         this.mainModels = mainModels;
-
+        this.mOntreeListener = onTreeListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_intem, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, mOntreeListener);
     }
 
     @Override
@@ -44,16 +45,26 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         return mainModels.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageView;
         TextView textView;
+        OnTreeListener onTreeListener;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnTreeListener onTreeListener) {
             super(itemView);
-
             imageView = itemView.findViewById(R.id.image_view);
             textView = itemView.findViewById(R.id.text_view);
-
+            this.onTreeListener = onTreeListener;
+            itemView.setOnClickListener(this::onClick);
         }
+
+        @Override
+        public void onClick(View view) {
+            onTreeListener.onTreeClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnTreeListener{
+        void onTreeClick(int position);
     }
 }

@@ -21,6 +21,8 @@ android:layout_height="wrap_content">
             android:layout_height="wrap_content"
             android:id="@+id/image_view"
             android:src ="@drawable/city"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:background="@android:color/transparent"
             tools:ignore="MissingConstraints" />
 
@@ -30,6 +32,8 @@ android:layout_height="wrap_content">
         android:layout_height="wrap_content"
         android:id="@+id/text_view"
         android:text="Nobel Fir"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"/>

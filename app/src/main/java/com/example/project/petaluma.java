@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -26,11 +27,10 @@ import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
-public class petaluma extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeListener{
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
-    ListView listView;
 
     Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city};
     String[] treeName = {"Silvertip Fir", "Douglas Fir", "Nordmann Fir", "Noble Fir", "Grand Fir", "Fraser Fir"};
@@ -41,8 +41,7 @@ public class petaluma extends AppCompatActivity implements AdapterView.OnItemCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petaluma);
 
-        listView = (ListView) findViewById(R.id.listview);
-
+        recyclerView = findViewById(R.id.recycler_view);
 
         mainModels = new ArrayList<>();
         for (int i=0;i<treeLogo.length;i++){
@@ -50,17 +49,12 @@ public class petaluma extends AppCompatActivity implements AdapterView.OnItemCli
             mainModels.add(model);
         }
 
-        ArrayAdapter<String> modelAdapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1, treeName);
-        listView.setAdapter(modelAdapter);
-        listView.setOnItemClickListener(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(petaluma.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
-        //LinearLayoutManager layoutManager = new LinearLayoutManager(petaluma.this, LinearLayoutManager.HORIZONTAL, false);
-        //recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        //mainAdapter = new MainAdapter(petaluma.this, mainModels);
-        //recyclerView.setAdapter(mainAdapter);
+        mainAdapter = new MainAdapter(petaluma.this, mainModels, this);
+        recyclerView.setAdapter(mainAdapter);
 
     }
 
@@ -75,14 +69,7 @@ public class petaluma extends AppCompatActivity implements AdapterView.OnItemCli
 
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        System.out.println(treeName[i]);
-
-        //Intent moveToDescIntent = new Intent(getBaseContext(), descriptionBottomSheet.class);
-        //moveToDescIntent.putExtra("TreeDesc", treeName[i]);
-        //startActivity(moveToDescIntent);
-
-
+    public void onTreeClick(int position) {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
                 petaluma.this, R.style.BottomSheetDialogTheme
         );
@@ -95,5 +82,4 @@ public class petaluma extends AppCompatActivity implements AdapterView.OnItemCli
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
-
 }
