@@ -6,12 +6,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -19,22 +26,22 @@ import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
-public class petaluma extends AppCompatActivity {
+public class petaluma extends AppCompatActivity implements AdapterView.OnItemClickListener {
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
+    ListView listView;
+
+    Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city};
+    String[] treeName = {"Silvertip Fir", "Douglas Fir", "Nordmann Fir", "Noble Fir", "Grand Fir", "Fraser Fir"};
+    String[] treeDesc = {"Silvertip desc", "Douglas desc", "Nordmann desc", "Noble desc", "Grand desc", "Fraser desc"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petaluma);
 
-        recyclerView = findViewById(R.id.recyclerview);
-
-        Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city, R.drawable.city};
-        String[] treeName = {"Silvertip Fir", "Douglas Fir", "Nordmann Fir", "Noble Fir", "Grand Fir", "Fraser Fir"};
-        String[] treeDesc = {"Silvertip desc", "Douglas desc", "Nordmann desc", "Noble desc", "Grand desc", "Fraser desc"};
-
+        listView = (ListView) findViewById(R.id.listview);
 
 
         mainModels = new ArrayList<>();
@@ -43,30 +50,17 @@ public class petaluma extends AppCompatActivity {
             mainModels.add(model);
         }
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(petaluma.this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        mainAdapter = new MainAdapter(petaluma.this, mainModels);
-        recyclerView.setAdapter(mainAdapter);
+        ArrayAdapter<String> modelAdapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1, treeName);
+        listView.setAdapter(modelAdapter);
+        listView.setOnItemClickListener(this);
 
 
-        Button buttonDesc = findViewById(R.id.buttonDesc);
-        buttonDesc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        petaluma.this, R.style.BottomSheetDialogTheme
-                );
-                View bottomSheetView = LayoutInflater.from(getApplicationContext())
-                        .inflate(
-                                R.layout.description_bottom_sheet,
-                                (LinearLayout)findViewById(R.id.bottomSheetContainer)
-                        );
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
-            }
-        });
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(petaluma.this, LinearLayoutManager.HORIZONTAL, false);
+        //recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        //mainAdapter = new MainAdapter(petaluma.this, mainModels);
+        //recyclerView.setAdapter(mainAdapter);
 
     }
 
@@ -80,5 +74,26 @@ public class petaluma extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        System.out.println(treeName[i]);
+
+        //Intent moveToDescIntent = new Intent(getBaseContext(), descriptionBottomSheet.class);
+        //moveToDescIntent.putExtra("TreeDesc", treeName[i]);
+        //startActivity(moveToDescIntent);
+
+
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                petaluma.this, R.style.BottomSheetDialogTheme
+        );
+        View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                .inflate(
+                        R.layout.description_bottom_sheet,
+                        (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                );
+
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
+    }
 
 }
