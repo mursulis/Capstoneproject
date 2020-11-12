@@ -51,6 +51,7 @@ public class opening extends AppCompatActivity{
         });
 
 
-        }
-
     }
+
+}
+
