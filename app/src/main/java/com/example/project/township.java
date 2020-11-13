@@ -8,13 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import java.util.ArrayList;
 
-public class township extends AppCompatActivity {
+public class township extends AppCompatActivity implements MainAdapter.OnTreeListener {
     ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList <MainModel> mainModels;
@@ -34,6 +37,8 @@ public class township extends AppCompatActivity {
             }
         });
 
+
+
         recyclerView = findViewById(R.id.recyclerview);
 
         Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
@@ -48,12 +53,13 @@ public class township extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mainAdapter = new MainAdapter(township.this, mainModels);
+        mainAdapter = new MainAdapter(township.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
 
     }
 
     private void openofferpopupcard() {
+
         Intent offerpopupcard = new Intent(township.this, offerpopupcard.class);
         startActivity(offerpopupcard);
 
@@ -69,4 +75,18 @@ public class township extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onTreeClick(int position) {
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                township.this, R.style.BottomSheetDialogTheme
+        );
+        View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                .inflate(
+                        R.layout.description_bottom_sheet,
+                        (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                );
+
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
+    }
 }

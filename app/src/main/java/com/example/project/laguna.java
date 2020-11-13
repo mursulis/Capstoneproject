@@ -5,24 +5,26 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 
-public class laguna extends AppCompatActivity {
+public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListener {
     ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
+
+    Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
+    String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +40,26 @@ public class laguna extends AppCompatActivity {
         });
 
 
-
-
         recyclerView = findViewById(R.id.recyclerview);
-
-        Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
-        String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
 
         mainModels = new ArrayList<>();
         for (int i=0;i<treeLogo.length;i++){
             MainModel model = new MainModel(treeLogo[i], treeName[i]);
             mainModels.add(model);
         }
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(laguna.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mainAdapter = new MainAdapter(laguna.this, mainModels);
+        mainAdapter = new MainAdapter(laguna.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
-
     }
 
     private void openofferpopupcard() {
         Intent offerpopupcard = new Intent(laguna.this, offerpopupcard.class);
         startActivity(offerpopupcard);
+
 
     }
 
@@ -75,4 +73,18 @@ public class laguna extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onTreeClick(int position) {
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                laguna.this, R.style.BottomSheetDialogTheme
+        );
+        View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                .inflate(
+                        R.layout.description_bottom_sheet,
+                        (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                );
+
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
+    }
 }
