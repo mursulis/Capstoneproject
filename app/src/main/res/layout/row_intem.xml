@@ -16,16 +16,16 @@ android:layout_height="wrap_content">
         android:paddingLeft="10dp"
         tools:ignore="MissingConstraints">
 
+
         <ImageButton
+            android:id="@+id/image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/image_view"
-            android:src ="@drawable/city"
             android:background="@android:color/transparent"
+            android:src="@drawable/city"
             tools:ignore="MissingConstraints" />
 
-
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_view"

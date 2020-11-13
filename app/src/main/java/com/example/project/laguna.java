@@ -5,14 +5,21 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
 public class laguna extends AppCompatActivity {
+    ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
@@ -21,6 +28,17 @@ public class laguna extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laguna);
+
+        offerbtn = (ImageButton) findViewById(R.id.offerbtn);
+        offerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openofferpopupcard();
+            }
+        });
+
+
+
 
         recyclerView = findViewById(R.id.recyclerview);
 
@@ -38,6 +56,12 @@ public class laguna extends AppCompatActivity {
 
         mainAdapter = new MainAdapter(laguna.this, mainModels);
         recyclerView.setAdapter(mainAdapter);
+
+    }
+
+    private void openofferpopupcard() {
+        Intent offerpopupcard = new Intent(laguna.this, offerpopupcard.class);
+        startActivity(offerpopupcard);
 
     }
 

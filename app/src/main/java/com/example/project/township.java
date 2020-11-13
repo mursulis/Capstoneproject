@@ -9,11 +9,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 public class township extends AppCompatActivity {
+    ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList <MainModel> mainModels;
     MainAdapter mainAdapter;
@@ -22,6 +24,15 @@ public class township extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_township);
+
+
+        offerbtn = (ImageButton) findViewById(R.id.offerbtn);
+        offerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openofferpopupcard();
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerview);
 
@@ -39,6 +50,12 @@ public class township extends AppCompatActivity {
 
         mainAdapter = new MainAdapter(township.this, mainModels);
         recyclerView.setAdapter(mainAdapter);
+
+    }
+
+    private void openofferpopupcard() {
+        Intent offerpopupcard = new Intent(township.this, offerpopupcard.class);
+        startActivity(offerpopupcard);
 
     }
 

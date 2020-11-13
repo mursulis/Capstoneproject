@@ -9,12 +9,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
 public class petaluma extends AppCompatActivity {
+    ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
@@ -23,6 +25,18 @@ public class petaluma extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petaluma);
+
+
+
+        offerbtn = (ImageButton) findViewById(R.id.offerbtn);
+        offerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openofferpopupcard();
+            }
+        });
+
+
 
         recyclerView = findViewById(R.id.recyclerview);
 
@@ -40,6 +54,13 @@ public class petaluma extends AppCompatActivity {
 
         mainAdapter = new MainAdapter(petaluma.this, mainModels);
         recyclerView.setAdapter(mainAdapter);
+
+    }
+
+    private void openofferpopupcard() {
+
+        Intent offerpopupcard = new Intent(petaluma.this, offerpopupcard.class);
+        startActivity(offerpopupcard);
 
     }
 
