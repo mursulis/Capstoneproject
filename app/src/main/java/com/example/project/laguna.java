@@ -1,6 +1,7 @@
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,13 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laguna);
+
+        Fragment fragment = new MapFragment();
+
+        getSupportFragmentManager()
+               .beginTransaction()
+               .replace(R.id.frame_layout, fragment)
+               .commit();
 
         offerbtn = (ImageButton) findViewById(R.id.offerbtn);
         offerbtn.setOnClickListener(new View.OnClickListener() {

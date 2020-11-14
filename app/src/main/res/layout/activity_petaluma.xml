@@ -18,6 +18,7 @@
         android:layout_marginEnd="182dp"
         android:layout_marginRight="182dp"
         android:layout_marginBottom="679dp"
+        android:gravity="center_horizontal"
         android:text="Pronzini Christmas Trees"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -26,8 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -40,10 +40,10 @@
         android:layout_marginRight="144dp"
         android:layout_marginBottom="56dp"
         android:background="#2196F3"
-        android:text="Let's Go!"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:onClick="click"
+        android:text="Let's Go!"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,29 +51,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="1.0" />
 
-    <HorizontalScrollView
-        android:id="@+id/map"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="32dp"
-        android:background="#18241E"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout"
+        />
 
-        <ImageButton
-            android:id="@+id/offerbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_marginHorizontal="120dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/offersign" />
-    </HorizontalScrollView>
+    <ImageButton
+        android:id="@+id/offerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="120dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/notes"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/offersign" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/notes"
@@ -107,10 +104,10 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/recyclerview"
-                android:layout_marginTop="40dp"/>
+                android:layout_marginTop="40dp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
