@@ -3,4 +3,7 @@
     <string name="todo">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="messageWithLink"><a href="http://theholidayapp.com">The Holiday App Website</a></string>
+    <string name="message"><a href="http://theholidayapp.com/privacy/">Privacy Policy</a></string>
+
 </resources>

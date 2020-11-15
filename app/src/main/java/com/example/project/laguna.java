@@ -87,6 +87,15 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
 
         mainAdapter = new MainAdapter(laguna.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
+
+        ImageButton btn = (ImageButton)findViewById(R.id.settings);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(laguna.this, Settings.class));
+            }
+        });
+
     }
 
     private void openofferpopupcard() {
