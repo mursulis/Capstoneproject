@@ -13,13 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
+        <activity android:name=".offerpetaluma"></activity>
+        <activity android:name=".offertownship" />
+        <activity android:name=".offerlaguna" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCqDKQ_TW4RVnihJ00Vd8-Y-RAsruKrPiA" />
 
-        <activity android:name=".Settings"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".Settings"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".offerpopupcard" />
         <activity android:name=".opening" />
         <activity android:name=".petaluma" />

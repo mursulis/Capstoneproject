@@ -55,7 +55,7 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
         offerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openofferpopupcard();
+                openofferl();
             }
         });
 
@@ -98,11 +98,9 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
 
     }
 
-    private void openofferpopupcard() {
-        Intent offerpopupcard = new Intent(laguna.this, offerpopupcard.class);
-        startActivity(offerpopupcard);
-
-
+    private void openofferl() {
+        Intent offerl = new Intent(laguna.this, offerlaguna.class);
+        startActivity(offerl);
     }
 
 
