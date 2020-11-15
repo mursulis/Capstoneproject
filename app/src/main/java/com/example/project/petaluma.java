@@ -1,6 +1,7 @@
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -29,6 +31,8 @@ import com.google.android.gms.maps.MapView;
 import java.util.ArrayList;
 
 public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeListener{
+
+    ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
@@ -44,7 +48,32 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petaluma);
 
-        recyclerView = findViewById(R.id.recycler_view);
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
+        Fragment fragment = new MapFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_layout, fragment)
+                .commit();
+
+
+
+        offerbtn = (ImageButton) findViewById(R.id.offerbtn);
+        offerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openofferpopupcard();
+            }
+        });
+
+
+
+        recyclerView = findViewById(R.id.recyclerview);
 
         treeDesc[0] = "The Silvertip Fir is the most sought-after Christmas tree. Their naturally beautiful " +
                 "silver tips and mountain fragrance is an inviting experience. Shaped with sturdy, " +
@@ -95,6 +124,13 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
 
         mainAdapter = new MainAdapter(petaluma.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
+
+    }
+
+    private void openofferpopupcard() {
+
+        Intent offerpopupcard = new Intent(petaluma.this, offerpopupcard.class);
+        startActivity(offerpopupcard);
 
     }
 

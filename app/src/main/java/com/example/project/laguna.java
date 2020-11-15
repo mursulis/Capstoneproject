@@ -1,6 +1,7 @@
 package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +12,7 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.ImageView
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import java.util.ArrayList;
 
 public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListener {
+    ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
@@ -29,10 +31,33 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
     String[] treeName = {"Nobel Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
     String[] treeDesc = new String[treeName.length];
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laguna);
+
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
+        Fragment fragment = new MapFragment();
+
+        getSupportFragmentManager()
+               .beginTransaction()
+               .replace(R.id.frame_layout, fragment)
+               .commit();
+
+        offerbtn = (ImageButton) findViewById(R.id.offerbtn);
+        offerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openofferpopupcard();
+            }
+        });
+
 
         recyclerView = findViewById(R.id.recyclerview);
 
@@ -61,6 +86,13 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
 
         mainAdapter = new MainAdapter(laguna.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
+    }
+
+    private void openofferpopupcard() {
+        Intent offerpopupcard = new Intent(laguna.this, offerpopupcard.class);
+        startActivity(offerpopupcard);
+
+
     }
 
 

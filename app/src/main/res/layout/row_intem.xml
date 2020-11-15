@@ -16,24 +16,20 @@ android:layout_height="wrap_content">
         android:paddingLeft="10dp"
         tools:ignore="MissingConstraints">
 
+
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/image_view"
-            android:src ="@drawable/city"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@android:color/transparent"
+            android:src="@drawable/city"
             tools:ignore="MissingConstraints" />
 
-
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_view"
         android:text="Nobel Fir"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"/>
