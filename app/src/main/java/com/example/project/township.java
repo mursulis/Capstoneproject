@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -21,6 +24,11 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
     ArrayList <MainModel> mainModels;
     MainAdapter mainAdapter;
 
+    Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
+    Integer[] treeLargeImage = {R.drawable.noble,R.drawable.douglas, R.drawable.fraser, R.drawable.nordmann};
+    String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
+    String[] treeDesc = new String[treeName.length];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +36,12 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
 
         recyclerView = findViewById(R.id.recyclerview);
 
-        Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
-        String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
+        treeDesc[0] = "Very Limited availability. Fragrant short green needles. Very full branching. " +
+                "Excellent needle retention.";
+        treeDesc[1] = "Beautiful green soft needles. Sizes from 5 to 9 ft tall.";
+        treeDesc[2] = "Our most popular variety. Great needle retention. A perfect selection for heavy " +
+                "ornaments. Unique two-tone, bluish color. Sizes from 6 to 16 ft tall.";
+        treeDesc[3] = "N/A";
 
         mainModels = new ArrayList<>();
         for (int i=0;i<treeLogo.length;i++){
@@ -47,11 +59,8 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
 
     public void click (View v){
         Intent i = new Intent(Intent.ACTION_VIEW);
-
         i.setData(Uri.parse("https://www.google.com/maps/place/English+Gardens/@42.5445213,-83.364295,17z/data=!3m1!4b1!4m5!3m4!1s0x8824ba461ad76b3b:0x2b5d1fe6ccc5c657!8m2!3d42.5445213!4d-83.3621063"));
-
         startActivity(i);
-
     }
 
 
@@ -65,6 +74,16 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
                         R.layout.description_bottom_sheet,
                         (LinearLayout)findViewById(R.id.bottomSheetContainer)
                 );
+
+        TextView titleTextView = (TextView) bottomSheetView.findViewById(R.id.TreeDescTitle);
+        titleTextView.setText(treeName[position]);
+
+        TextView descTextView = (TextView) bottomSheetView.findViewById(R.id.TreeDesc);
+        descTextView.setText(treeDesc[position]);
+        descTextView.setMovementMethod(new ScrollingMovementMethod());
+
+        ImageView descImageView = (ImageView) bottomSheetView.findViewById(R.id.LargeTreeImage);
+        descImageView.setImageResource(treeLargeImage[position]);
 
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
