@@ -5,22 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/newofferbg"
+    android:background="@drawable/offerlaguna"
     tools:context=".offerpopupcard">
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="230dp"
+        android:layout_width="241dp"
         android:layout_height="0dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="75dp"
         android:gravity="center_horizontal"
         android:text="Show this Screen to Your Tree Lot Specialist"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="364dp"
+        android:text="With Purchases Over $69"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

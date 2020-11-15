@@ -54,7 +54,7 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         offerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openofferpopupcard();
+                openoffert();
             }
         });
 
@@ -90,10 +90,10 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         });
     }
 
-    private void openofferpopupcard() {
+    private void openoffert() {
 
-        Intent offerpopupcard = new Intent(township.this, offerpopupcard.class);
-        startActivity(offerpopupcard);
+        Intent offert = new Intent(township.this, offertownship.class);
+        startActivity(offert);
 
     }
 

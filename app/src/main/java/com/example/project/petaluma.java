@@ -67,7 +67,7 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
         offerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openofferpopupcard();
+                openofferp();
             }
         });
 
@@ -135,10 +135,10 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
 
     }
 
-    private void openofferpopupcard() {
+    private void openofferp() {
 
-        Intent offerpopupcard = new Intent(petaluma.this, offerpopupcard.class);
-        startActivity(offerpopupcard);
+        Intent offerp = new Intent(petaluma.this, offerpetaluma.class);
+        startActivity(offerp);
 
     }
 
