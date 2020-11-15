@@ -25,7 +25,7 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
     MainAdapter mainAdapter;
 
     Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
-    String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
+    String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,15 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
 
         mainAdapter = new MainAdapter(laguna.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
+
+        ImageButton btn = (ImageButton)findViewById(R.id.settings);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(laguna.this, Settings.class));
+            }
+        });
+
     }
 
     private void openofferpopupcard() {

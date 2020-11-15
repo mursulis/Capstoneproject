@@ -55,7 +55,7 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         recyclerView = findViewById(R.id.recyclerview);
 
         Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
-        String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
+        String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
 
         mainModels = new ArrayList<>();
         for (int i=0;i<treeLogo.length;i++){
@@ -69,6 +69,13 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         mainAdapter = new MainAdapter(township.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
 
+        ImageButton btn = (ImageButton)findViewById(R.id.settings);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(township.this, Settings.class));
+            }
+        });
     }
 
     private void openofferpopupcard() {

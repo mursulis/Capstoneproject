@@ -85,6 +85,14 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
         mainAdapter = new MainAdapter(petaluma.this, mainModels, this);
         recyclerView.setAdapter(mainAdapter);
 
+        ImageButton btn = (ImageButton)findViewById(R.id.settings);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(petaluma.this, Settings.class));
+            }
+        });
+
     }
 
     private void openofferpopupcard() {

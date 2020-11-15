@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,11 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCqDKQ_TW4RVnihJ00Vd8-Y-RAsruKrPiA"/>
+            android:value="AIzaSyCqDKQ_TW4RVnihJ00Vd8-Y-RAsruKrPiA" />
 
-        <activity android:name=".offerpopupcard"></activity>
+        <activity android:name=".Settings"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".offerpopupcard" />
         <activity android:name=".opening" />
         <activity android:name=".petaluma" />
         <activity android:name=".township" />
