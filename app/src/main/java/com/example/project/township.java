@@ -27,7 +27,7 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
     ArrayList <MainModel> mainModels;
     MainAdapter mainAdapter;
 
-    Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
+    Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
     String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
     String[] treeDesc = new String[treeName.length];
     Integer[] treeLargeImage = {R.drawable.noble,R.drawable.douglas, R.drawable.fraser, R.drawable.nordmann};
