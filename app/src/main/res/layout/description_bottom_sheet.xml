@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bottom_sheet_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/LargeTreeImage"
@@ -14,15 +15,27 @@
         android:layout_height="400dp"
         android:paddingTop="4dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/silver_tip" />
+        android:src="@drawable/silvertip" />
+
+    <TextView
+        android:id="@+id/TreeDescTitle"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:padding="15dp"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/TreeDesc"
         android:layout_width="match_parent"
-        android:layout_height="308dp"
-        android:padding="15dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus arcu ex, iaculis vitae nisi eget, semper ullamcorper metus. Vestibulum nec lorem malesuada, pretium turpis quis, fringilla lacus. Nulla eget elementum neque. Nulla vitae odio eget lectus sodales mattis sed et magna. Etiam dictum tempor metus, ac accumsan erat porttitor id. "
-        android:textSize="17dp" />
+        android:layout_height="230dp"
+        android:paddingHorizontal="15dp"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="@color/white"
+        android:scrollbars="vertical"
+        android:textSize="17sp" />
 
 
 </LinearLayout>
