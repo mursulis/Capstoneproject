@@ -32,6 +32,12 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laguna);
 
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
         Fragment fragment = new MapFragment();
 
         getSupportFragmentManager()

@@ -19,6 +19,12 @@ public class opening extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
 
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);

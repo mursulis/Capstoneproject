@@ -29,6 +29,12 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_township);
 
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
         Fragment fragment = new MapFragment();
         getSupportFragmentManager()
                 .beginTransaction()

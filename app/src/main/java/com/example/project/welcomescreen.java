@@ -16,6 +16,12 @@ public class welcomescreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcomescreen);
 
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
         button4 = findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override

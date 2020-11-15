@@ -30,6 +30,7 @@ import com.google.android.gms.maps.MapView;
 import java.util.ArrayList;
 
 public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeListener{
+
     ImageButton offerbtn;
     RecyclerView recyclerView;
     ArrayList<MainModel> mainModels;
@@ -43,6 +44,12 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petaluma);
+
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
 
         Fragment fragment = new MapFragment();
 

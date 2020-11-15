@@ -11,17 +11,9 @@
         android:id="@+id/google_map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="320dp"
         android:layout_width="400dp"
-        android:layout_height="230dp" />
+        android:layout_height="270dp" />
 
-    <ImageButton
-        android:id="@+id/offerbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="155dp"
-        android:layout_marginTop="290dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/offersign" />
 
 </RelativeLayout>

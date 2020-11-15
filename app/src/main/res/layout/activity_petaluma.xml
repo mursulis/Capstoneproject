@@ -31,14 +31,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="300dp"
-        android:layout_height="85dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
         android:layout_marginStart="144dp"
         android:layout_marginLeft="144dp"
         android:layout_marginTop="556dp"
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="18dp"
         android:background="#2196F3"
         android:onClick="click"
         android:text="Let's Go!"
@@ -52,25 +52,22 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame_layout"
-        />
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <ImageButton
-        android:id="@+id/offerbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="120dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/notes"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/offersign" />
+        <ImageButton
+            android:id="@+id/offerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="150dp"
+            android:layout_marginTop="575dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/offersign" />
+
+    </FrameLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/notes"
@@ -78,7 +75,7 @@
         android:layout_height="180dp"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="40dp"

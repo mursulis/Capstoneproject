@@ -14,6 +14,12 @@ public class offerpopupcard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offerpopupcard);
 
+        try {
+            this.getSupportActionBar().hide();
+        }
+
+        catch (NullPointerException e){}
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
