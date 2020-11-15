@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:padding="15dp"
-        android:text="@string/hello_world"
+        android:text="@string/hello_blank_fragment"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:paddingHorizontal="15dp"
-        android:text="@string/hello_world"
+        android:text="@string/hello_blank_fragment"
         android:textColor="@color/white"
         android:scrollbars="vertical"
         android:textSize="17sp" />
