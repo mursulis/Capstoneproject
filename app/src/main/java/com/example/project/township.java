@@ -54,7 +54,7 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
 
         recyclerView = findViewById(R.id.recyclerview);
 
-        Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
+        Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
         String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
 
         mainModels = new ArrayList<>();

@@ -24,7 +24,7 @@ public class laguna extends AppCompatActivity implements MainAdapter.OnTreeListe
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
 
-    Integer[] treeLogo = {R.drawable.city,R.drawable.city, R.drawable.city, R.drawable.city};
+    Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
     String[] treeName = {"Nobel Fir", "Douglas Fir", "Frazier Fir", "Nordmann Fir"};
 
     @Override
