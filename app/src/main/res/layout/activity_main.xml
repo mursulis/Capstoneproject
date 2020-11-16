@@ -154,7 +154,7 @@
            android:layout_width="106dp"
            android:layout_height="match_parent"
            android:layout_marginLeft="20dp"
-           app:srcCompat="@drawable/newlagunahills" />
+           app:srcCompat="@drawable/laghills" />
    </androidx.cardview.widget.CardView>
 
    <ImageView
