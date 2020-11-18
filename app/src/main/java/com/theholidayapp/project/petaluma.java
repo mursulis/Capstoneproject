@@ -37,7 +37,7 @@ public class petaluma extends AppCompatActivity implements MainAdapter.OnTreeLis
     ArrayList<MainModel> mainModels;
     MainAdapter mainAdapter;
 
-    Integer[] treeLogo = {R.drawable.silvertip,R.drawable.douglasfir, R.drawable.nordmannfir, R.drawable.noblefir, R.drawable.grandfir, R.drawable.fraserfir};
+    Integer[] treeLogo = {R.drawable.silvertip_small,R.drawable.douglas_small, R.drawable.nordmann_small, R.drawable.noble_small, R.drawable.grand_small, R.drawable.fraser_small};
     Integer[] treeLargeImage = {R.drawable.silvertip, R.drawable.douglas, R.drawable.nordmann, R.drawable.noble,
                                 R.drawable.grand, R.drawable.fraser};
     String[] treeName = {"Silvertip Fir", "Douglas Fir", "Nordmann Fir", "Noble Fir", "Grand Fir", "Fraser Fir"};

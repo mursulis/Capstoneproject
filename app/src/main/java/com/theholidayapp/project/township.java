@@ -27,10 +27,10 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
     ArrayList <MainModel> mainModels;
     MainAdapter mainAdapter;
 
-    Integer[] treeLogo = {R.drawable.noblefir,R.drawable.douglasfir, R.drawable.fraserfir, R.drawable.nordmannfir};
-    String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Nordmann Fir"};
+    Integer[] treeLogo = {R.drawable.noble_small,R.drawable.douglas_small, R.drawable.fraser_small, R.drawable.balsam_small};
+    String[] treeName = {"Noble Fir", "Douglas Fir", "Fraser Fir", "Balsam Fir"};
     String[] treeDesc = new String[treeName.length];
-    Integer[] treeLargeImage = {R.drawable.noble,R.drawable.douglas, R.drawable.fraser, R.drawable.nordmann};
+    Integer[] treeLargeImage = {R.drawable.noble,R.drawable.douglas, R.drawable.fraser, R.drawable.balsam};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,8 @@ public class township extends AppCompatActivity implements MainAdapter.OnTreeLis
         treeDesc[1] = "Beautiful green soft needles. Sizes from 5 to 9 ft tall.";
         treeDesc[2] = "Our most popular variety. Great needle retention. A perfect selection for heavy " +
                 "ornaments. Unique two-tone, bluish color. Sizes from 6 to 16 ft tall.";
-        treeDesc[3] = "N/A";
+        treeDesc[3] = "The traditional Christmas tree variety. Most fragrant variety. Looks very similar" +
+                    "to Fraser Fir trees. Good needle retention. Sizes from 5 to 9 ft. tall";
 
         mainModels = new ArrayList<>();
         for (int i=0;i<treeLogo.length;i++){
