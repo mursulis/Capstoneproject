@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
-        <activity android:name=".offerpetaluma"></activity>
+        <activity android:name=".countdown"></activity>
+        <activity android:name=".offerpetaluma" />
         <activity android:name=".offertownship" />
         <activity android:name=".offerlaguna" />
 
