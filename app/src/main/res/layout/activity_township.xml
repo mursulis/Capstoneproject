@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView16"
-        android:layout_width="186dp"
-        android:layout_height="121dp"
+        android:layout_width="187dp"
+        android:layout_height="95dp"
         android:layout_marginStart="123dp"
         android:layout_marginLeft="123dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="102dp"
         android:layout_marginRight="102dp"
         android:layout_marginBottom="594dp"
@@ -46,19 +46,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageButton
-        android:id="@+id/settings"
-        android:layout_width="41dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
-        app:layout_constraintEnd_toStartOf="@+id/frame_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_manage" />
-
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -80,6 +67,13 @@
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/offersign" />
 
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="41dp"
+            android:layout_height="42dp"
+
+            app:srcCompat="@android:drawable/ic_menu_manage" />
+
     </FrameLayout>
 
     <androidx.cardview.widget.CardView
@@ -88,7 +82,7 @@
         android:layout_height="180dp"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="40dp"
